@@ -1,4 +1,5 @@
 require_relative 'config/environment'
+require "pry"
 
 class App < Sinatra::Base
 
@@ -7,5 +8,12 @@ class App < Sinatra::Base
   end
 
   # Add your post route and action below
+
+  post '/food' do
+    # binding.pry
+    @name = params[:name]
+    @food = params[:favorite_food]
+    "My name is #{@name}, and I love #{@food}"
+  end
 
 end
